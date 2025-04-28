@@ -1,3 +1,27 @@
-<button class="btn btn-primary">Boostrap</button>
+<div class="container-fluid p-0 d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="py-3">
+    <div class="container">
+      <h1 class="text-dark" style="text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">TuSegundazo.com</h1>
+    </div>
+  </header>
 
-<router-outlet />
+  <!-- Banner Image -->
+  <div class="container px-0 border-bottom border-top">
+    <div class="banner-container py-3">
+      <img src="image.jpg" class="img-fluid w-100">
+    </div>
+  </div>
+
+  <!-- Main Content - Contenedor flexible que crece -->
+  <main class="container my-4">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer - Siempre abajo -->
+  <footer class="py-4 text-center bg-white mt-auto">
+    <div class="container">
+      <p class="mb-0">Contact us: +57 3102105253 - info&#64;tusegundazo.com - &#64;tusegundazo</p>
+    </div>
+  </footer>
+</div>
