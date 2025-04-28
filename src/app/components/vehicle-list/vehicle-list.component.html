@@ -1,8 +1,7 @@
 <div class="container mt-4">
-    <!-- Primera fila -->
+    <!-- Fila 1 -->
     <div class="row">
-      
-      <!-- Columna 70%: Tabla -->
+      <!-- Tabla 70% -->
       <div class="col-md-8">
         <table class="table table-striped">
           <thead class="table-dark">
@@ -14,48 +13,38 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Chevrolet</td>
-              <td>Spark</td>
-              <td>2022</td>
+            <tr *ngFor="let vehicle of vehicles; let i = index" (click)="onSelect(vehicle)" style="cursor: pointer;">
+              <td>{{ i + 1 }}</td>
+              <td>{{ vehicle.marca }}</td>
+              <td>{{ vehicle.linea }}</td>
+              <td>{{ vehicle.anio }}</td>
             </tr>
-            <tr>
-              <td>2</td>
-              <td>Renault</td>
-              <td>Sandero</td>
-              <td>2023</td>
-            </tr>
-            <!-- Aquí iría el *ngFor después -->
           </tbody>
         </table>
       </div>
   
-      <!-- Columna 30%: Card -->
-      <div class="col-md-4">
+      <!-- Card 30% -->
+      <div class="col-md-4" *ngIf="selectedVehicle">
         <div class="card">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Vehículo">
+          <img [src]="selectedVehicle.imagen" class="card-img-top" alt="Auto" style="max-height: 200px; object-fit: cover;">
           <div class="card-body">
-            <h5 class="card-title">Chevrolet Spark</h5>
-            <p class="card-text">
-              <strong>Kilometraje:</strong> 20,000 km<br>
-              <strong>Color:</strong> Rojo<br>
-              <strong>Referencia:</strong> SPK-2022
-            </p>
+            <h5 class="card-title">{{ selectedVehicle.marca }} {{ selectedVehicle.linea }}</h5>
+            <p class="card-text"><strong>Kilometraje:</strong> {{ selectedVehicle.kilometraje | number }} km</p>
+            <p class="card-text"><strong>Color:</strong> {{ selectedVehicle.color }}</p>
+            <p class="card-text"><strong>Referencia:</strong> {{ selectedVehicle.modelo }}</p>
           </div>
         </div>
       </div>
-  
     </div>
   
-    <!-- Segunda fila -->
+    <!-- Fila 2 -->
     <div class="row mt-4">
       <div class="col">
         <h4>Totales por Marca</h4>
-        <ul>
-          <li>Chevrolet: 5 vehículos</li>
-          <li>Renault: 3 vehículos</li>
-          <!-- Aquí después agregarías los datos reales -->
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let marca of (marcaTotals | keyvalue)">
+            <strong>{{ marca.key }}:</strong> {{ marca.value }} vehículos
+          </li>
         </ul>
       </div>
     </div>
