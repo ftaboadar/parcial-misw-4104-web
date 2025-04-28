@@ -1,1 +1,63 @@
-<p>vehicle-list works!</p>
+<div class="container mt-4">
+    <!-- Primera fila -->
+    <div class="row">
+      
+      <!-- Columna 70%: Tabla -->
+      <div class="col-md-8">
+        <table class="table table-striped">
+          <thead class="table-dark">
+            <tr>
+              <th>#</th>
+              <th>Marca</th>
+              <th>Línea</th>
+              <th>Modelo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Chevrolet</td>
+              <td>Spark</td>
+              <td>2022</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Renault</td>
+              <td>Sandero</td>
+              <td>2023</td>
+            </tr>
+            <!-- Aquí iría el *ngFor después -->
+          </tbody>
+        </table>
+      </div>
+  
+      <!-- Columna 30%: Card -->
+      <div class="col-md-4">
+        <div class="card">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Vehículo">
+          <div class="card-body">
+            <h5 class="card-title">Chevrolet Spark</h5>
+            <p class="card-text">
+              <strong>Kilometraje:</strong> 20,000 km<br>
+              <strong>Color:</strong> Rojo<br>
+              <strong>Referencia:</strong> SPK-2022
+            </p>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  
+    <!-- Segunda fila -->
+    <div class="row mt-4">
+      <div class="col">
+        <h4>Totales por Marca</h4>
+        <ul>
+          <li>Chevrolet: 5 vehículos</li>
+          <li>Renault: 3 vehículos</li>
+          <!-- Aquí después agregarías los datos reales -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  

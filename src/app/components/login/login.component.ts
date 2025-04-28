@@ -24,7 +24,7 @@ export class LoginComponent {
     const { userName, password } = this.loginForm.value;
 
     if (userName === 'admin' && password === 'admin') {
-      this.router.navigate(['']);
+      this.router.navigate(['list']);
       this.showError = false; 
     } else {
       this.showError = true;
